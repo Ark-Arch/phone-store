@@ -9,4 +9,5 @@ fi
 git add /workspace/phone-store
 git commit -m "$1"
 git push origin main
+clear
 
