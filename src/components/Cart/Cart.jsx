@@ -30,4 +30,37 @@ const Cart = () => {
             </div>
         )
     }
+
+    const emptyCart = () => {
+        return (
+            <div className='px-4 my-5 bg-light rounded-3 py-5'>
+                <div className='container py-4'>
+                    <div className='row'>
+                        <h3>Your Cart is empty</h3>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    const button = () => {
+        return (
+            <div className='container'>
+                <div className='row'>
+                    <Link to='/checkout' className='btn btn-outline-primary mb-5 w-25 mx-auto'>Proceed to checkpoint</Link>
+
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div>
+            {state.length === 0 && emptyCart()}
+            {state.length !== 0 && state.map(cartItems)}
+            {state.length !== 0 && button()}
+        </div>
+    )
 }
+
+export default Cart
